@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+Sign In Page
+{% endblock title %}
+
+{% block main %}
+<div class="container">
+    {% if products %}
+    <h2 class="my-5">Liked Products</h2>
+    {% else %}
+    <h2 class="text-center my-5" style="min-height:200px">No Liked Products</h2>
+    {% endif %}
+    <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4 col-md-6 col-sm-6 pb-1">
+            {% include 'shop/components/product.html' %}
+        </div>
+        {% endfor %}
+
+    </div>
+
+
+</div>
+{% endblock main %}
